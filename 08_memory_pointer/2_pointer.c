@@ -10,6 +10,8 @@ int main (void) {
 
     while(*p_name != '\0'){
         p_name++;
+    printf("p_name pointer  : %p\n", p_name);
+
         count++;
     }
 
