@@ -17,8 +17,7 @@ int main (void) {
     // 런타임에 동적으로 HEAP 영역에 메모리 공간을 할당받습니다. -> 이 때 연속된 공간 1BYTE 12개입니다.
     pszData = (char *)malloc(sizeof(char) * 12);
 
-    // 이 행동을 할 수 없는 이유는 pszData와 szBuffer가 둘 다 상수이기 떄문입니다.
-    // 즉, 변할 수 없는 값, 둘 다 주소를 의미하기 때문입니다.
+    // 이 행동이 위험한 이유는 pszData의 Heap 영역을 할당받았으나 그 주소값을 잃어버리기 떄문입니다.
     // pszData = szBuffer;
 
     // 제대로 값을 넣기 위해서는 -> for or memcpy
@@ -29,6 +28,7 @@ int main (void) {
         printf("%c \n", pszData[i]);
     }
 
+    free(pszData);
 
 
     return 0;
