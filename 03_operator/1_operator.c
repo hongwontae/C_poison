@@ -13,6 +13,10 @@ int main (void) {
     printf("/ result = %d\n", num/3);
     printf("\\ result = %d\n", num%3);
 
+    // 정수 간 나눗셈의 결과는 반드시 정수, 나머지는 절삭합니다.
+    printf("int value = %d\n", num/3);
+
+    // 실수 연산 정수의 결과값은 항상 실수입니다. -> 실수 타입이 더 크기 떄문입니다.
     printf("double value = %f\n", (double)num/3);
 
 
