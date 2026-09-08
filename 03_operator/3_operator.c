@@ -16,6 +16,9 @@ int main () {
     printf("두 숫자의 평균은 %.2f 입니다. \n", (double)(num1+num2)/2);
     // 정수 연산 실수 -> 타입은 실수입니다. -> 여기선 double, 실수 리터럴은 기본적으로 double입니다.
     printf("두 숫자의 평균은 %.2f 입니다\n", (num1+num2)/2.00);
+
+    // 8 -> double -> 실수 리터럴은 기본적으로 double이고 연산했을 때 피연산의 자료형이 더 크면 값은 더 큰 타입으로 변경됨
+    printf("sizeof -> %zu", sizeof((num1+num2)/2.00));
     
 
     return 0;

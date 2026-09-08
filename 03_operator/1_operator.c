@@ -2,6 +2,8 @@
 
 int main (void) {
 
+    // 타입이 다른 연산은 피연산자의 타입이 더 큰 타입이 값으로 나옵니다.
+
     int num = 10;
 
     printf("num result = %d\n", num+3);
