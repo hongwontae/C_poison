@@ -3,23 +3,30 @@
 int main(void)
 {
 
-    int a_list[] = {10, 20, 30, 40, 9, 5};
-    size_t length = sizeof(a_list) / sizeof(a_list[0]);
+    // 배열을 오름차순으로 정렬하세요.
 
-    for (int i = 0; i < length; i++)
+    int num_set[] = {100, 200, 500, 400, 90, 30};
+    // num_set_size = 6;
+    size_t num_set_size = sizeof(num_set) / sizeof(num_set[1]);
+
+    // num_set[i] -> 첫 번째 요소일 떄 2,3,4,5,6 전부 돌아야 함
+    // 또한 첫 루프가 끝나면 2번 쨰 요소가 3,4,5,6를 전부 돌아야 함
+    for (int i = 0; i < num_set_size; ++i)
     {
-        if (a_list[0] > a_list[i])
+        for (int n = i + 1; n < num_set_size; ++n)
         {
-            int bucket = a_list[0];
-            a_list[0] = a_list[i];
-            a_list[i] = bucket;
+            if (num_set[i] > num_set[n])
+            {
+                int bucket = num_set[i];
+                num_set[i] = num_set[n];
+                num_set[n] = bucket;
+            }
         }
     }
 
-    printf("가장 작은 수는 %d 입니다.\n", a_list[0]);
-    
-    for (int j = 0; j < length; j++) {
-        printf("현재 배열 값은 차례대로 %d\n", a_list[j]);
+    for (int i = 0; i < num_set_size; i++)
+    {
+        printf("num_set[%d] = %d\n", i, num_set[i]);
     }
 
     return 0;
