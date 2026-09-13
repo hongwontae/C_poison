@@ -22,9 +22,11 @@ int main (void) {
     char sz_buffer_2 [sizeof(sz_buffer_1)] = "";
 
     size_t sz_buffer_length_1 = sizeof(sz_buffer_1)/sizeof(sz_buffer_1[0]);
-    // strlen은 null 문자 고려 x
+    // strlen은 문자열으 길이를 구하는 함수입니다. 널 문자는 길이에 포함하지 않습니다.
     size_t sz_buffer_length_2 = strlen(sz_buffer_1)+1;
     size_t real_length = 0;
+    
+    my_strcpy(sz_buffer_1, sz_buffer_2);
 
     if (sz_buffer_length_1 == sz_buffer_length_2){
         printf("Test 성공\n");
@@ -35,7 +37,6 @@ int main (void) {
         return 0;
     }
 
-    my_str_str(sz_buffer_1, sz_buffer_2, real_length);
 
 
 

@@ -6,21 +6,29 @@ int main (void) {
 
     size_t length = 8;
 
-    char * char_p = (char *) malloc(sizeof(char) * length);
+    char * p = (char *) malloc (length);
+    printf("char p address = %p\n", p);
 
-    char_p[0] = 'H';
-    char_p[1] = 'H';
-    char_p[2] = 'H';
-    char_p[3] = 'H';
-    char_p[4] = '\0';
+    for (int i = 0; i < length; i++) {
+        p[i] = 'H'+i;
+    }
 
-    printf("char_p data = %s\n", char_p);
+    p[length] = '\0';
 
-    char * re_char_p = (char *) realloc(char_p, 16);
+    // realloc은 이미 동적으로 할당된 메모리의 크기를 변경하는 함수입니다.
+    // realloc(기존_메모리_주소, 새로운_크기);
+    p = realloc(p, 10);
+    printf("realloc p address = %p\n", p);
+    
+    p[10] = '\0';
 
-    printf("char_p pointer address    : %p\n", char_p);
-    printf("re_char_p pointer address : %p\n", re_char_p);
+    for (int i = 0; i < 10; i++) {
+        printf("p : %c \n", p[i]);
+    }
 
+
+
+    free(p);
 
     return 0;
 }

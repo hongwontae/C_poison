@@ -1,17 +1,16 @@
 #include <stdio.h>
 
-int get_factorial (int param) {
+// get_factorial를 호출하면 if 문 검사를 하고 return get_fa..를 만납ㄴ다.
+// 이 떄 함수가 호출됩니다. -> Call Stack에 쌓이고 되는데 이 떄 if문을 실행하고 나서 나머지 코드가 쌓이는 것입니다.
+// 그렇다면 param이 1이 되는 순간 return 1이 되면서 각 스택의 get_factorial() return 값이 붙게 되면서 곱셈 연산 후 전달됩니다.
 
-    int n_data = 0;
+int get_factorial (int param) {
 
     if (param == 1) {
         return 1;
     }
 
-    // get_factorial(param-1)이 호출되어 param == 1이 만나서 return 전까지 n_data = param * 문부터 멈춥니다.
-    // 모든 스택에 있는 함수들이 -> 그리고 return이 된 순간 n_data*param부터 모든 함수가 실행됩니다.
-    n_data = param * get_factorial(param-1);
-    return n_data;
+    return get_factorial(param-1) * param;
 
 }
 
