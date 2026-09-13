@@ -3,7 +3,7 @@
 
 int main (void) {
 
-    // 문자열 -> 초기화를 중괄호로 실행
+    // 문자열 -> 초기화를 중괄호로 실행 / 중괄호로 초기화해도 널문자가 자동으로 추가됩니다.
     char szBuffer []  = {"Hello"};
 
     // 문자열 상수 -> char [] -> data section에 존재 -> H 주소를 pszBuffer에 넣습니다.
