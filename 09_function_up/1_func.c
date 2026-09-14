@@ -37,9 +37,6 @@ int main (void) {
         return 0;
     }
 
-
-
-
     printf("sz_buffer_2 string : %s\n", sz_buffer_2);
 
     return 0;
