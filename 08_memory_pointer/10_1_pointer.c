@@ -8,6 +8,7 @@ int main (void) {
     // strstr은 문자열 찾기
     // strcmp는 문자열 비교하기
     // strcpy는 문자열 복사하기
+    // strlen은 문자열에서 널 문자 나올 떄까지 count -> 인덱스가 됩니다. -> 길이 자체가 아닙니다.
 
 
     char name_1 [] = "Hong-Won-Tae";
@@ -31,8 +32,8 @@ int main (void) {
 
     char * p = strstr(name_5, search);
     printf("찾을 문자열 주소 : %p\n", p);
-    printf("찾을 문자열 인덱스 : %ld", &name_5[sizeof(name_5)] - p);
-    printf("적합하게 찾았는지 확인 %c: ", name_5[&name_5[sizeof(name_5)] - p]);
+    printf("찾을 문자열 인덱스 : %ld\n", &name_5[sizeof(name_5)] - p);
+    printf("적합하게 찾았는지 확인 %c\n: ", name_5[&name_5[sizeof(name_5)] - p]);
 
 
     return 0;

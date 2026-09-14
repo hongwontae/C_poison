@@ -21,7 +21,7 @@ int main (void) {
 
     printf("p : %s\n", p);
 
-
+    
 
     return 0;
 }

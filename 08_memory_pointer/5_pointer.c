@@ -6,6 +6,11 @@ int main (void){
 
     int *pList = NULL, *pNewList = NULL;
 
+    int num_set = 40;
+
+    memset(&num_set, 0, sizeof(int));
+    printf("num_set : %d\n", num_set);
+
     // 12 byte
     pList = (int *)malloc(sizeof(int)*3);
 

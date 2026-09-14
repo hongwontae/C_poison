@@ -20,8 +20,7 @@ int main (void) {
     // 이 행동이 위험한 이유는 pszData의 Heap 영역을 할당받았으나 그 주소값을 잃어버리기 떄문입니다.
     // pszData = szBuffer;
 
-    // 제대로 값을 넣기 위해서는 -> for or memcpy
-
+    // 제대로 값을 넣기 위해서는 -> for or memcpy -> memcp는 메모리 내용 자체를 복사하기 때문입니다. / for문도 인덱스 접근으로 메모리 속 값을 변경합니다.
     memcpy(pszData, szBuffer, sizeof(char)*12);
 
     for (int i = 0; i < 12; i++){
