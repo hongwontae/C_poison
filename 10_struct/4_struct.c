@@ -8,6 +8,8 @@ typedef struct Person {
 
 } Person;
 
+// 구조체 내부에 자신의 주소를 사용하고 싶다면 typedef + 이름 없는 구조체 형식으로 지정하면 안됩니다.
+// 해당 코드는 간단하게 연결리스트를 표현한 것입니다.
 
 int main (void) {
 

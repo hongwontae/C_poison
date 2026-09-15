@@ -19,7 +19,7 @@ void link_test (USERDATA * p) {
     link_test(p->p);
 };
 
-
+// 연결리스트를 만들고 재귀함수를 호출해서 마지막 요소의 주소가 null 까지 실행합니다.
 int main (void) {
 
     USERDATA user_member [4] = {

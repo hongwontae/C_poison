@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+// 함수에 구조체 포인터를 넘겨서 변경
+// 함수에 값을 줘서 변경 return 값으로 받아서 해결
+
 typedef struct {
 
     int age;
@@ -10,47 +13,35 @@ typedef struct {
 
 } USERDATA;
 
-void test_1 (USERDATA * data_p) {
-
-    strcpy(data_p->name_1, "Mao");
-    strcpy(data_p->name_2, "Zuudung");
-    data_p->age = 200;
-
-
+void change_struct (USERDATA * pointer) {
+    pointer->age = 10;
+    strcpy(pointer->name_1, "Hong");
+    strcpy(pointer->name_2, "YUI");
 }
 
-USERDATA test_2 (USERDATA data) {
+USERDATA change_struct_2 (USERDATA ud) {
+    ud.age = 200;
+    strcpy(ud.name_1, "ZZZZ");
+    strcpy(ud.name_2, "xxxx");
 
-    strcpy(data.name_1, "Hong");
-    strcpy(data.name_2, "Won");
-
-    data.age = 10;
-
-    return data;
+    return ud;
 }
+
 
 
 int main () {
 
     USERDATA u1;
 
-    USERDATA * p = (USERDATA * )malloc(sizeof(USERDATA));
+    USERDATA * p = (USERDATA *) malloc (sizeof(USERDATA));
 
-    
-    // strcpy(p->name_1, "Hello");
-    // strcpy(p->name_2, "World");
+    change_struct(p);
 
-    // p->age = 10;
+    USERDATA u2 = change_struct_2(u1);
 
-    // printf("name_1 : %s, name_2 : %s, age : %d\n", p->name_1, p->name_2, p->age);
+    printf("p %d,%s,%s \n", p->age, p->name_1, p->name_2);
 
-    // p
-    test_1(p);
-    printf("이름 : %s %s, 나이 : %d\n", p->name_1, p->name_2, p->age);
-
-    u1 = test_2(u1);
-    printf("이름 : %s %s, 나이 : %d\n", u1.name_1, u1.name_2, u1.age);
-
+    printf("u2 %d, %s, %s\n", u2.age, u2.name_1, u2.name_2);
 
     return 0;
 }
