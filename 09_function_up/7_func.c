@@ -17,12 +17,16 @@ char * saveper = NULL;
 // 함수로 변수를 전달했을 떄 내부의 값을 복사해서 전달합니다. -> 우리가 하고 싶은건 saveper 포인터 변수 자체를 지속적으로 변경하는 것
 char *token = strtok_r(str, " ", &saveper);
 
+int index = 0;
 
 while (token != NULL) {
+    index++;
     printf("%s\n", token);
-    printf("%s\n", saveper);
+    // printf("%s\n", saveper);
     token = strtok_r(NULL, " ", &saveper);
 }
+
+printf("index : %d\n", index);
 
     return 0;
 }
