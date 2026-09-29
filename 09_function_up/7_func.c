@@ -27,7 +27,8 @@ int index = 0;
 
 while (token != NULL) {
     index++;
-    printf("%s\n", token);
+    printf("%ld\n", token-str);
+    printf("index = %p\n", token);
     // printf("%s\n", saveper);
     token = strtok_r(NULL, " ", &saveper);
 }
