@@ -16,9 +16,16 @@ char * saveper = NULL;
 // 이 때 saveper 자체를 변경하기 위해서 이중 포인터로 전달합니다.
 // 함수로 변수를 전달했을 떄 내부의 값을 복사해서 전달합니다. -> 우리가 하고 싶은건 saveper 포인터 변수 자체를 지속적으로 변경하는 것
 
+<<<<<<< HEAD
 // strtok 동작
 // strtok_r은 공백을 널로 만들고 널 만들기 전 가장 앞 문자의 주소를 반환합니다.
 // 이러한 동작이 계속되고 C\0을 만났을 떄도 C\0를 반환합니다. -> 이것도 토큰이라고 생각합니다.
+=======
+
+// strtok는 전달한 기존 문자열을 변형시킵니다.
+// 구분자를 널로 바꾸고 그 앞의 첫 번쨰 주소를 반환합니다. 즉, hello\0 -> h의 주소 반환 -> 다음 사이클
+
+>>>>>>> 6aa6e2ab04779ab1703dfb6985f0a0fc9d412d7b
 
 char *token = strtok_r(str, " ", &saveper);
 
@@ -26,7 +33,8 @@ int index = 0;
 
 while (token != NULL) {
     index++;
-    printf("%s\n", token);
+    printf("%ld\n", token-str);
+    printf("index = %p\n", token);
     // printf("%s\n", saveper);
     token = strtok_r(NULL, " ", &saveper);
 }

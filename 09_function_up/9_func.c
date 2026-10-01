@@ -11,14 +11,14 @@ int main (void ) {
     char * name_p = my_name;
 
 
-    // strpbrk -> 문자열에서 특정 문자들 중 하나가 처음 등장하는 위치를 찾아주는 함수입니다.
-    // strpbrk는 내부적으로 하나씩 비교하면서 검색한 위치를 기억합니다.
-    // 다음에 호출할 떄 다음 인덱스부터 비교합니다. 그리고 마지막까지 가면 NULL을 반환합니다.
-    while ((name_p = strpbrk(name_p, "oa")) != NULL) {
+    // strpbrk -> 문자열에서 특정 문자들 중 하나가 처음 등장하는 위치를 찾아주고 그 위치를 반환하는 함수입니다.
+    // 만약 다 검색했는데 없으면 NULL을 반환합니다.
+    while ((name_p = strpbrk(name_p, "ao")) != NULL) {
 
         printf("구분자 출력 : %c \n", *name_p);
         printf("인덱스 출력 : %td\n", name_p - my_name);
         name_p++;
+        printf("\n");
     }
 
     return 0;
