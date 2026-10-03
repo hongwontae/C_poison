@@ -6,8 +6,8 @@ void put_char (char * name_set) {
         return;
     }
     
-    putchar(*name_set);
     put_char(name_set+1);
+    putchar(*name_set);
 }
 
 
