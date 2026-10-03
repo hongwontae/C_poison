@@ -14,12 +14,12 @@ int main (void) {
     printf("newName : %s\n", newName);
 
 
-    char name_2 [] =  "Alexander Isak";
-    char * p;
+    // char name_2 [] =  "Alexander Isak";
+    // char * p;
 
-    memcpy(p, name_2, sizeof(name_2));
+    // memcpy(p, name_2, sizeof(name_2));
 
-    printf("p : %s\n", p);
+    // printf("p : %s\n", p);
 
     
 
